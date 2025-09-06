@@ -1,4 +1,4 @@
-package exception;
+package com.shoppingcart.app.exception;
 
 public class RequestException extends Exception{
     

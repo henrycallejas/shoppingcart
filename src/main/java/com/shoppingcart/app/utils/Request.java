@@ -6,7 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import exception.RequestException;
+import com.shoppingcart.app.exception.RequestException;
 
 public class Request {
     // Private constructor to prevent instantiation
