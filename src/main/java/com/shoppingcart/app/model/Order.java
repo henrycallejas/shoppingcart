@@ -25,7 +25,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS")
-@ToString
 @Getter
 @Setter
 @AllArgsConstructor
@@ -40,7 +39,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "CLIENT_ID")
-    @JsonBackReference
+    //@JsonBackReference
     private Client client;
 
     @Column(name = "ORDER_DATE")

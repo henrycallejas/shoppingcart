@@ -28,7 +28,6 @@ public class CardValidator {
             sum += n;
             alternate = !alternate;
         }
-        System.out.println(sum % 10 == 0);
         return sum % 10 == 0;
     }
 

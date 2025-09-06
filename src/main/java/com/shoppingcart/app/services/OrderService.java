@@ -32,9 +32,6 @@ public class OrderService implements IOrderService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
-    private ProductService productService;
-
     @Override
     public List<Order> getAllOrders() {
        return this.orderRepository.findAll();
