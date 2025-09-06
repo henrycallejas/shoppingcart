@@ -6,11 +6,10 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-public class Apiresponse {
+public class ApiResponse {
 
     // Private constructor to prevent instantiation
-    private Apiresponse() {
-        
+    private ApiResponse() {
     }
 
     public static ResponseEntity<Map<String, Object>> jsonResponse(HttpStatus code, String message, Object data) {
