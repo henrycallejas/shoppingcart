@@ -12,7 +12,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shoppingcart.app.dto.LoginDto;
 import com.shoppingcart.app.enums.ResponseMessage;
 import com.shoppingcart.app.exception.InvalidLoginRequestException;
-import com.shoppingcart.app.model.Client;
 import com.shoppingcart.app.security.jwt.JWTUtils;
 
 import jakarta.servlet.FilterChain;
