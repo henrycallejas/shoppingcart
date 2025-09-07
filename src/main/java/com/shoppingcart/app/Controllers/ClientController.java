@@ -21,6 +21,8 @@ import com.shoppingcart.app.mappers.ClientMapper;
 import com.shoppingcart.app.model.Client;
 import com.shoppingcart.app.services.ClientService;
 import com.shoppingcart.app.utils.ApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
 @RequestMapping("/clients")
@@ -31,6 +33,7 @@ public class ClientController {
     @Autowired
     private ClientMapper clientMapper;
 
+    @Operation(summary = "Get all clients", description = "Retrieve a list of all clients")
     @GetMapping
     public ResponseEntity<Map<String, Object>> getAllClients() {
         try {
@@ -45,8 +48,9 @@ public class ClientController {
         }
     }
 
+    @Operation(summary = "Get client by ID", description = "Retrieve a client by its ID")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> getClientById(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> getClientById(@Parameter(description = "ID of the client to retrieve") @PathVariable Long id) {
         try {
             Client client = this.clientService.getClientById(id);
             ClientDto clientDto = this.clientMapper.toDto(client);
@@ -60,6 +64,7 @@ public class ClientController {
         }
     }
 
+    @Operation(summary = "Create a new client", description = "Create a new client with the provided details")
     @PostMapping
     public ResponseEntity<Map<String, Object>> createClient(@RequestBody Client client) {
         try {
@@ -71,6 +76,7 @@ public class ClientController {
         }
     }
 
+    @Operation(summary = "Update an existing client", description = "Update the details of an existing client")
     @PutMapping
     public ResponseEntity<Map<String, Object>> updateClient(@RequestBody Client client) {
         try {
@@ -97,8 +103,9 @@ public class ClientController {
         }
     }
 
+    @Operation(summary = "Delete a client", description = "Delete a client by its ID")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteClient(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> deleteClient(@Parameter(description = "ID of the client to delete") @PathVariable Long id) {
         try {
             Client existingClient = this.clientService.getClientById(id);
             if (existingClient == null) {

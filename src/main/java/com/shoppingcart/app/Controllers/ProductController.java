@@ -20,13 +20,15 @@ import com.shoppingcart.app.enums.ResponseMessage;
 import com.shoppingcart.app.model.Product;
 import com.shoppingcart.app.services.ProductService;
 import com.shoppingcart.app.utils.ApiResponse;
-
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
     @Autowired
     ProductService productService;
 
+    @Operation(summary = "Get all products", description = "Retrieve a list of all products")
     @GetMapping
     public ResponseEntity<Map<String, Object>> getAllProducts() {
         try {
@@ -42,8 +44,9 @@ public class ProductController {
 
     }
 
+    @Operation(summary = "Get product by ID", description = "Retrieve a product by its ID")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> getProductById(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> getProductById(@Parameter(description = "ID of the product to retrieve") @PathVariable Long id) {
         try {
             ProductDto product = this.productService.getProductById(id);
             if (product != null) {
@@ -57,6 +60,7 @@ public class ProductController {
 
     }
 
+    @Operation(summary = "Create a new product", description = "Create a new product with the provided information")
     @PostMapping
     public ResponseEntity<Map<String, Object>> createProduct(@RequestBody ProductDto product) {
         try {
@@ -74,8 +78,9 @@ public class ProductController {
         }
     }
 
+    @Operation(summary = "Update an existing product", description = "Update an existing product with the provided information")
     @PutMapping
-    public ResponseEntity<Map<String, Object>> updateOrder(@RequestBody ProductDto productDto) {
+    public ResponseEntity<Map<String, Object>> updateProduct(@RequestBody ProductDto productDto) {
         try {
             Product updatedProduct = this.productService.updateProduct(productDto);
             if (updatedProduct != null) {
@@ -91,8 +96,9 @@ public class ProductController {
         }
     }
 
+    @Operation(summary = "Delete a product", description = "Delete a product by its ID")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteOrder(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> deleteProduct(@Parameter(description = "ID of the product to delete") @PathVariable Long id) {
         try {
             this.productService.deleteProduct(id);
             return ApiResponse.jsonResponse(HttpStatus.OK, ResponseMessage.OK.getMessage(), id);

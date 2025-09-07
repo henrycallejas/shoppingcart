@@ -21,6 +21,8 @@ import com.shoppingcart.app.model.Order;
 import com.shoppingcart.app.model.OrderDetail;
 import com.shoppingcart.app.services.OrderService;
 import com.shoppingcart.app.utils.ApiResponse;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 
 @RestController
 @RequestMapping("/orders")
@@ -31,6 +33,7 @@ public class OrderController {
     @Autowired
     private OrderMapper orderMapper;
 
+    @Operation(summary = "Get all orders", description = "Retrieve a list of all orders")
     @GetMapping
     public ResponseEntity<Map<String, Object>> getAllOrders() {
         try {
@@ -45,8 +48,9 @@ public class OrderController {
         }
     }
 
+    @Operation(summary = "Get order by ID", description = "Retrieve an order by its ID")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> getOrderById(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> getOrderById(@Parameter(description = "ID of the order to retrieve") @PathVariable Long id) {
         try {
             Order order = this.orderService.getOrderById(id);
             OrderDto orderDto = this.orderMapper.toDto(order);
@@ -60,6 +64,7 @@ public class OrderController {
         }
     }
 
+    @Operation(summary = "Create a new order", description = "Create a new order with the provided details")
     @PostMapping
     public ResponseEntity<Map<String, Object>> createOrder(@RequestBody OrderDetailDto order) {
         try {
