@@ -1,5 +1,7 @@
 package com.shoppingcart.app.mappers;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -12,4 +14,5 @@ public interface ClientMapper {
     @Mapping(target = "clientId", source = "clientId")
     ClientDto toDto(Client client);
 
+    List<ClientDto> toDtoList(List<Client> clients);
 }
