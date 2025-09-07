@@ -1,7 +1,9 @@
 package com.shoppingcart.app.repositories;
 
 import org.springframework.stereotype.Repository;
-import com.shoppingcart.app.model.Order;
+
+import com.shoppingcart.app.entities.Order;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository

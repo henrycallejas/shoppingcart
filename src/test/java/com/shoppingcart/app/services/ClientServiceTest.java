@@ -12,7 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.shoppingcart.app.model.Client;
+import com.shoppingcart.app.entities.Client;
 import com.shoppingcart.app.repositories.ClientRepository;
 
 @ExtendWith(MockitoExtension.class)

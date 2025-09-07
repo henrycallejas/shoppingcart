@@ -2,7 +2,7 @@ package com.shoppingcart.app.services;
 
 import java.util.List;
 
-import com.shoppingcart.app.model.OrderDetail;
+import com.shoppingcart.app.entities.OrderDetail;
 
 public interface IOrderDetailService {
     List<OrderDetail> getAllOrderDetails();

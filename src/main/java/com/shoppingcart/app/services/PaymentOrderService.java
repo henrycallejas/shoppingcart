@@ -15,12 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.shoppingcart.app.dto.OrderDetailDto;
 import com.shoppingcart.app.dto.PaymentOrderDto;
+import com.shoppingcart.app.entities.Client;
+import com.shoppingcart.app.entities.Order;
+import com.shoppingcart.app.entities.OrderDetail;
+import com.shoppingcart.app.entities.PaymentOrder;
+import com.shoppingcart.app.entities.Product;
 import com.shoppingcart.app.enums.PaymentStatus;
-import com.shoppingcart.app.model.Client;
-import com.shoppingcart.app.model.Order;
-import com.shoppingcart.app.model.OrderDetail;
-import com.shoppingcart.app.model.PaymentOrder;
-import com.shoppingcart.app.model.Product;
 import com.shoppingcart.app.repositories.ClientRepository;
 import com.shoppingcart.app.repositories.OrderRepository;
 import com.shoppingcart.app.repositories.PaymentOrderRepository;

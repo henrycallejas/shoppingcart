@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.shoppingcart.app.model.Client;
+import com.shoppingcart.app.entities.Client;
 import com.shoppingcart.app.repositories.ClientRepository;
 
 @Service

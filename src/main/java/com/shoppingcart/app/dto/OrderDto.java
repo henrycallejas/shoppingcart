@@ -3,8 +3,8 @@ package com.shoppingcart.app.dto;
 import java.util.Date;
 import java.util.List;
 
-import com.shoppingcart.app.model.OrderDetail;
-import com.shoppingcart.app.model.PaymentOrder;
+import com.shoppingcart.app.entities.OrderDetail;
+import com.shoppingcart.app.entities.PaymentOrder;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

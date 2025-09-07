@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shoppingcart.app.dto.OrderDetailDto;
-import com.shoppingcart.app.model.Client;
-import com.shoppingcart.app.model.Order;
-import com.shoppingcart.app.model.OrderDetail;
-import com.shoppingcart.app.model.Product;
+import com.shoppingcart.app.entities.Client;
+import com.shoppingcart.app.entities.Order;
+import com.shoppingcart.app.entities.OrderDetail;
+import com.shoppingcart.app.entities.Product;
 import com.shoppingcart.app.repositories.ClientRepository;
 import com.shoppingcart.app.repositories.OrderDetailRepository;
 import com.shoppingcart.app.repositories.OrderRepository;

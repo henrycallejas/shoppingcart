@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.shoppingcart.app.dto.OrderDetailDto;
 import com.shoppingcart.app.dto.OrderDto;
+import com.shoppingcart.app.entities.Order;
+import com.shoppingcart.app.entities.OrderDetail;
 import com.shoppingcart.app.enums.ResponseMessage;
 import com.shoppingcart.app.mappers.OrderMapper;
-import com.shoppingcart.app.model.Order;
-import com.shoppingcart.app.model.OrderDetail;
 import com.shoppingcart.app.services.OrderService;
 import com.shoppingcart.app.utils.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;

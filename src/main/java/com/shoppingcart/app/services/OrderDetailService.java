@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.shoppingcart.app.model.OrderDetail;
+import com.shoppingcart.app.entities.OrderDetail;
 import com.shoppingcart.app.repositories.OrderDetailRepository;
 
 @Service

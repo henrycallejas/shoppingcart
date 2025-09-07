@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.shoppingcart.app.dto.ProductDto;
-import com.shoppingcart.app.model.Product;
+import com.shoppingcart.app.entities.Product;
 import com.shoppingcart.app.repositories.ProductRepository;
 
 @Service

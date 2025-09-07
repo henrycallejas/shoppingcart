@@ -2,7 +2,7 @@ package com.shoppingcart.app.services;
 
 import java.util.List;
 
-import com.shoppingcart.app.model.Client;
+import com.shoppingcart.app.entities.Client;
 
 public interface IClientService {
     Client getClientById(Long id);

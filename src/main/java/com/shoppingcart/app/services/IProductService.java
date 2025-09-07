@@ -3,7 +3,7 @@ package com.shoppingcart.app.services;
 import java.util.List;
 
 import com.shoppingcart.app.dto.ProductDto;
-import com.shoppingcart.app.model.Product;
+import com.shoppingcart.app.entities.Product;
 
 public interface IProductService {
     List<ProductDto> getAllProducts();

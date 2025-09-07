@@ -5,7 +5,7 @@ import java.util.List;
 import org.mapstruct.Mapper;
 
 import com.shoppingcart.app.dto.OrderDto;
-import com.shoppingcart.app.model.Order;
+import com.shoppingcart.app.entities.Order;
 
 @Mapper(componentModel = "spring", uses = {ClientMapper.class})
 public interface OrderMapper {

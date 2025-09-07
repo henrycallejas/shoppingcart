@@ -2,8 +2,8 @@ package com.shoppingcart.app.dto;
 
 import java.math.BigDecimal;
 
-import com.shoppingcart.app.model.Order;
-import com.shoppingcart.app.model.OrderDetail;
+import com.shoppingcart.app.entities.Order;
+import com.shoppingcart.app.entities.OrderDetail;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

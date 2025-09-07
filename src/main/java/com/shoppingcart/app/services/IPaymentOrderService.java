@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.shoppingcart.app.dto.PaymentOrderDto;
-import com.shoppingcart.app.model.PaymentOrder;
+import com.shoppingcart.app.entities.PaymentOrder;
 
 public interface IPaymentOrderService {
     List<PaymentOrder> getAllPaymentOrders();

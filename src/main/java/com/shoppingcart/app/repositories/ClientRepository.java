@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.shoppingcart.app.model.Client;
+import com.shoppingcart.app.entities.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {

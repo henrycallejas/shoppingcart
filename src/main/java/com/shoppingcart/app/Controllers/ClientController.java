@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shoppingcart.app.dto.ClientDto;
+import com.shoppingcart.app.entities.Client;
 import com.shoppingcart.app.enums.ResponseMessage;
 import com.shoppingcart.app.mappers.ClientMapper;
-import com.shoppingcart.app.model.Client;
 import com.shoppingcart.app.services.ClientService;
 import com.shoppingcart.app.utils.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;

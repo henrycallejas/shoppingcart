@@ -16,7 +16,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.shoppingcart.app.model.OrderDetail;
+import com.shoppingcart.app.entities.OrderDetail;
 import com.shoppingcart.app.repositories.OrderDetailRepository;
 
 @ExtendWith(MockitoExtension.class)

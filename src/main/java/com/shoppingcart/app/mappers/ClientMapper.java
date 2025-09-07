@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.shoppingcart.app.dto.ClientDto;
-import com.shoppingcart.app.model.Client;
+import com.shoppingcart.app.entities.Client;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
