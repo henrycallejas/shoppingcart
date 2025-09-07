@@ -2,6 +2,9 @@ package com.shoppingcart.app.enums;
 
 public enum ResponseMessage {
     OK("Request completed correctly"),
+    DELETED("Resource deleted successfully"),
+    UPDATED("Resource updated successfully"),
+    NO_CONTENT("No content to display"),
     CREATED("Resource created successfully"),
     NOT_FOUND("Resource not found"),
     ERROR("An unexpected error occurred"),

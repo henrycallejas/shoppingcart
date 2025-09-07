@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,7 +49,7 @@ public class PaymentOrderController {
             if (order != null) {
                 return ApiResponse.jsonResponse(HttpStatus.OK, ResponseMessage.OK.getMessage(), order);
             } else {
-                return ApiResponse.jsonResponse(HttpStatus.NOT_FOUND, ResponseMessage.NOT_FOUND.getMessage(), null);
+                return ApiResponse.jsonResponse(HttpStatus.NOT_FOUND, ResponseMessage.NO_CONTENT.getMessage(), null);
             }
         } catch (Exception e) {
             return ApiResponse.jsonResponse(HttpStatus.INTERNAL_SERVER_ERROR, ResponseMessage.ERROR.getMessage(), e.getMessage());
@@ -73,12 +74,22 @@ public class PaymentOrderController {
     }
 
     @PutMapping
-    public ResponseEntity<PaymentOrder> updatePaymentOrder(@RequestBody PaymentOrderDto order) {
+    public ResponseEntity<Map<String, Object>> updatePaymentOrder(@RequestBody PaymentOrderDto order) {
         PaymentOrder updatedOrder = this.paymentOrderService.updatePaymentOrder(order);
         if (updatedOrder != null) {
-            return new ResponseEntity<>(updatedOrder, HttpStatus.OK);
+            return ApiResponse.jsonResponse(HttpStatus.OK, ResponseMessage.UPDATED.getMessage(), updatedOrder);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ApiResponse.jsonResponse(HttpStatus.NOT_FOUND, ResponseMessage.NO_CONTENT.getMessage(), null);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Object>> deletePaymentOrder(@PathVariable Long id) {
+        boolean isDeleted = this.paymentOrderService.deletePaymentOrder(id);
+        if (isDeleted) {
+            return ApiResponse.jsonResponse(HttpStatus.OK, ResponseMessage.DELETED.getMessage(), id);
+        } else {
+            return ApiResponse.jsonResponse(HttpStatus.OK, ResponseMessage.NOT_FOUND.getMessage(), null);
         }
     }
 }

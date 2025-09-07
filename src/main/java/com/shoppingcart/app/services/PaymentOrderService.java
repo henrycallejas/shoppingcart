@@ -127,4 +127,13 @@ public class PaymentOrderService implements IPaymentOrderService{
         return null;
     }
     
+    public boolean deletePaymentOrder(Long id) {
+        Optional<PaymentOrder> paymentOrder = this.paymentOrderRepository.findById(id);
+        if (paymentOrder.isPresent()) {
+            this.paymentOrderRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
