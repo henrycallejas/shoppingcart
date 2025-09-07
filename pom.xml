@@ -96,6 +96,12 @@
 			<artifactId>lombok-mapstruct-binding</artifactId>
 			<version>0.2.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -119,42 +125,42 @@
 							<artifactId>lombok</artifactId>
 							<version>1.18.30</version>
 						</path>
-						</annotationProcessorPaths>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<configuration>
-						<excludes>
-							<exclude>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok</artifactId>
-							</exclude>
-						</excludes>
-					</configuration>
-				</plugin>
-			</plugins>
-		</build>
-		<repositories>
-			<repository>
-				<id>spring-snapshots</id>
-				<name>Spring Snapshots</name>
-				<url>https://repo.spring.io/snapshot</url>
-				<releases>
-					<enabled>false</enabled>
-				</releases>
-			</repository>
-		</repositories>
-		<pluginRepositories>
-			<pluginRepository>
-				<id>spring-snapshots</id>
-				<name>Spring Snapshots</name>
-				<url>https://repo.spring.io/snapshot</url>
-				<releases>
-					<enabled>false</enabled>
-				</releases>
-			</pluginRepository>
-		</pluginRepositories>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 
-	</project>
+</project>
