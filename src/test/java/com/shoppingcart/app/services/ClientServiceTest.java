@@ -2,6 +2,7 @@ package com.shoppingcart.app.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.shoppingcart.app.entities.Client;
 import com.shoppingcart.app.repositories.ClientRepository;
@@ -23,6 +25,9 @@ class ClientServiceTest {
 
     @Mock
     private ClientRepository clientRepository;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
     @Test
     void testGetAllClients() {
@@ -53,7 +58,7 @@ class ClientServiceTest {
     void testCreateClient() {
         Client newClient = new Client();
         newClient.setName("Jane Doe");
-
+        when(passwordEncoder.encode(any())).thenReturn("encryptedPassword");
         when(clientRepository.save(newClient)).thenReturn(newClient);
 
         Client createdClient = clientService.createClient(newClient);
