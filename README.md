@@ -52,10 +52,24 @@ RESTful API for managing a shopping cart, including JWT authentication, user man
     git clone https://github.com/henrycallejas/shoppingcart.git
     cd shoppingcart
     ```
+2. Just create a database in mysql
 
-2. Configure the database in `src/main/resources/application.properties`.
+3. Configure the database in `src/main/resources/application.properties`.
 
-3. Install dependencies:
+   Configure your username and passwor for mysql:
+   ```sh
+   spring.datasource.username=root
+   spring.datasource.password=your_password
+   spring.datasource.url=jdbc:mysql://localhost:3306/YOUR_DATABASE_NAME?useSSL=false&serverTimezone=UTC
+    ```
+
+5. If this is the first time you run the project, use this configuration (By Default):
+```sh
+spring.jpa.hibernate.ddl-auto=create-drop
+ ```
+With this configuration, the necessary tables for the database will be created.
+
+5. Install dependencies:
     ```sh
     mvn clean install
     ```
@@ -68,6 +82,10 @@ RESTful API for managing a shopping cart, including JWT authentication, user man
 mvn spring-boot:run
 ```
 
+Important: Once the project is up and running, change the Hibernate configuration so that your data is not deleted when you restart the project:
+```sh
+spring.jpa.hibernate.ddl-auto=update
+```
 ---
 ## Authentication and Security
 
