@@ -1,31 +1,31 @@
 # Shopping Cart API
 
-Proyecto de ejemplo de un sistema de carrito de compras desarrollado con **Spring Boot**.
+Sample project for a shopping cart system developed with **Spring Boot**.
 
 ---
 
-## Tabla de Contenidos
+## Table of Contents
 
-- [Descripción](#descripción)
-- [Tecnologías](#tecnologías)
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Ejecución](#ejecución)
-- [Autenticación y Seguridad](#autenticación-y-seguridad)
-- [Documentación Swagger](#documentación-swagger)
+- [Description](#description)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running](#running)
+- [Authentication and Security](#authentication-and-security)
+- [Swagger Documentation](#swagger-documentation)
 - [Testing](#testing)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Autores](#autores)
+- [Project Structure](#project-structure)
+- [Authors](#authors)
 
 ---
 
-## Descripción
+## Description
 
-API RESTful para la gestión de un carrito de compras, que incluye autenticación JWT, gestión de usuarios, productos, órdenes y clientes.
+RESTful API for managing a shopping cart, including JWT authentication, user management, products, orders, and clients.
 
 ---
 
-## Tecnologías
+## Technologies
 
 - **Java 17**
 - **Spring Boot 3.x**
@@ -33,61 +33,61 @@ API RESTful para la gestión de un carrito de compras, que incluye autenticació
 - **Spring Security 6 (JWT)**
 - **Swagger / OpenAPI (springdoc-openapi)**
 - **Lombok**
-- **MySQL** 
+- **MySQL**
 - **Maven**
 
 ---
 
-## Requisitos Previos
+## Prerequisites
 
-- Java 17 o superior
+- Java 17 or higher
 - Maven 3.8+
 
 ---
 
-## Instalación
+## Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
     ```sh
     git clone https://github.com/henrycallejas/shoppingcart.git
     cd shoppingcart
     ```
 
-2. Configura la base de datos en `src/main/resources/application.properties`.
+2. Configure the database in `src/main/resources/application.properties`.
 
-3. Instala las dependencias:
+3. Install dependencies:
     ```sh
     mvn clean install
     ```
 
 ---
 
-## Ejecución
+## Running
 
 ```sh
 mvn spring-boot:run
 ```
 
 ---
-## Autenticación y Seguridad
+## Authentication and Security
 
 - **Login:**  
-  Endpoint: `POST /login`  
-  Body:
+Endpoint: POST /login
+Body:
   ```json
   {
     "username": "admin",
     "password": "1234"
   }
 
-## Documentación Swagger
-Accede a la documentación interactiva en:
+## Swagger Documentation
+Access the interactive documentation at:
 http://localhost:8080/swagger-ui.html
 
 ## Testing
-Shopping_Cart usa Junit para tests unitarios. Ejecuta los test con:
+Shopping_Cart uses JUnit for unit tests. Run the tests with:
 
-Usando maven:
+Using Maven:
 
 ```sh
 mvn test
@@ -95,7 +95,7 @@ mvn test
 
 ---
 
-## Estructura del Proyecto
+## Project Structure
 ```sh
 src/
  └── main/
@@ -116,5 +116,5 @@ src/
 
 ---
 
-## Autores
+## Author
 Henry Callejas
