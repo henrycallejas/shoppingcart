@@ -37,17 +37,22 @@ public class SecurityConfig {
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
 
         return httpSecurity
-                .csrf(config -> config.disable())
-                .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/login").permitAll();
-                    auth.anyRequest().authenticated();
-                })
-                .sessionManagement(session -> {
-                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                })
-                .addFilter(jwtAuthenticationFilter)
-                .addFilterAfter(jwtAuthorizationFilter(), JwtAuthenticationFilter.class)
-                .build();
+        .csrf(config -> config.disable())
+        .authorizeHttpRequests(auth -> {
+            auth.requestMatchers(
+                "/login",
+                "/swagger-ui.html",
+                "/swagger-ui/**",
+                "/v3/api-docs/**"
+            ).permitAll();
+            auth.anyRequest().authenticated();
+        })
+        .sessionManagement(session -> {
+            session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        })
+        .addFilter(jwtAuthenticationFilter)
+        .addFilterAfter(jwtAuthorizationFilter(), JwtAuthenticationFilter.class)
+        .build();
     }
 
     @Bean
